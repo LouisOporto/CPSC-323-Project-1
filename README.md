@@ -17,7 +17,8 @@ Should ignore whitespaces and comments
 # Input is language of choice #
 
 ### Example Input ###
-`
+
+```python
 a = 10 
 b = 5
 
@@ -29,4 +30,4 @@ else:
 
 for i in range(5):
     print("iteration", i)
-`
+```
