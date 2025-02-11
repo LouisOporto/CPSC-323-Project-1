@@ -1,5 +1,10 @@
-int main() { 
-    float x = 3.14; float y = 2.7;
-    float z = x + y; 
-    return 0; 
-}
+x = 3.14
+y = 2.7
+
+z = x + y
+print("x + y\n")
+print(x + " + " + y)
+print(z)
+
+for i in range(5):
+    print("Iteration", i)

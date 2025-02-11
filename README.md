@@ -17,14 +17,16 @@ Should ignore whitespaces and comments
 # Input is language of choice #
 
 ### Example Input ###
-` 
-int main() {
-    float x = 3.14; float y = 3.15;
-    float z = x + y;
-    bool boolean = true
-    if (boolean) {
-        std::cout << "Value Z:" << z << std::endl;
-    }
-    return 0;
-}
+`
+a = 10 
+b = 5
+
+if a > b:
+    print("a is greater than b")
+else:
+    print("b is greater than or equal to a")
+
+
+for i in range(5):
+    print("iteration", i)
 `
