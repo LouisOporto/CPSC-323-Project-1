@@ -8,9 +8,11 @@ token_type = {
     'UNKNOWN': 5,
 }
 
-def lexical_analysis(input):
+def lexical_analysis(input: str):
     """ Given the file text as input read the text line by line and return the identified token types"""
-
+    for i, char in enumerate(input, 1):
+        print('char', str(i).rjust(3, ' '), ':', char)
+    
 
 
 if __name__ == "__main__":
@@ -24,3 +26,6 @@ if __name__ == "__main__":
         full_text += file.read()
     
     print(full_text)
+
+    print("Running lexical analyzer...\n")
+    lexical_analysis(full_text)
