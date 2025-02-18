@@ -10,8 +10,15 @@ token_type = {
 
 def lexical_analysis(input: str):
     """ Given the file text as input read the text line by line and return the identified token types"""
+    white_space = ' '
+    lexme = ''
+
     for i, char in enumerate(input, 1):
-        print('char', str(i).rjust(3, ' '), ':', char)
+        lexme += char
+        if (i < len(input)): 
+            if input[i] == white_space:
+                print(lexme)
+                lexme = ''
     
 
 
