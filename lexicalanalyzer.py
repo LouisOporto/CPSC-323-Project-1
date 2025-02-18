@@ -13,13 +13,16 @@ def lexical_analysis(input: str):
     white_space = ' '
     lexme = ''
 
-    for i, char in enumerate(input, 1):
-        lexme += char
-        if (i < len(input)): 
-            if input[i] == white_space:
-                print(lexme)
-                lexme = ''
-    
+    for i, char in enumerate(input):
+        if char != white_space:
+            lexme += char
+            if (i + 1 < len(input)): 
+                if input[i + 1] == white_space:
+                    print(lexme)
+                    lexme = ''
+    print (lexme) # Final lexme before end of file
+                
+        
 
 
 if __name__ == "__main__":
@@ -34,5 +37,5 @@ if __name__ == "__main__":
     
     print(full_text)
 
-    print("Running lexical analyzer...\n")
+    print("\nRunning lexical analyzer...\n")
     lexical_analysis(full_text)
