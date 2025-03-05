@@ -32,14 +32,15 @@ def lexical_analysis(input: str):
     
     print("Set of lexemes and tokens (<lexemes> = <tokens>)")
     print("\"")
+    # Need to resovlve the issue with last lexme in a line to be properly printed
     for i, char in enumerate(input):
         if char != white_space:
             lexme += char
             if (i + 1 < len(input)): 
                 if input[i + 1] == white_space:
-                    print(f"{lexme} = <seperator>")
+                    print(f"\"{lexme}\" = <seperator>")
                     lexme = ''
-    print (f"{lexme} = <seperator>") # Final lexme before end of file
+    print (f"\"{lexme}\" = <seperator>") # Final lexme before end of file
     print("\"")
 
 if __name__ == "__main__":
