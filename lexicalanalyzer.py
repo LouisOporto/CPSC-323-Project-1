@@ -27,8 +27,6 @@ def lexical_analysis(input: str):
 
 if __name__ == "__main__":
     '''Run lexical program on user inputted file'''
-    print("Runnin lexical analysis tool\n")
-
     full_text = ""
     # user_input = input("File Input: ")
     user_input = "source.txt"
@@ -36,6 +34,6 @@ if __name__ == "__main__":
         full_text += file.read()
     # print(full_text) # Print the full text of the file
 
-    print("\nRunning lexical analyzer...\n")
+    print("Running lexical analyzer...")
     lexical_analysis(full_text)
-    print("\nLexical analysis complete\n")
+    print("Lexical analysis complete")
