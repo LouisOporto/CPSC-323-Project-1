@@ -34,8 +34,8 @@ if __name__ == "__main__":
     user_input = "source.txt"
     with open(user_input, "r") as file:
         full_text += file.read()
-    
-    print(full_text)
+    # print(full_text) # Print the full text of the file
 
     print("\nRunning lexical analyzer...\n")
     lexical_analysis(full_text)
+    print("\nLexical analysis complete\n")
