@@ -14,6 +14,14 @@ token_type = {
     'END': 6
 }
 
+# Define the keywords in Python
+keywords = [
+    'False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue',
+    'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global',
+    'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise',
+    'return', 'try', 'while', 'with', 'yield'
+] # 32 keywords
+
 # Define token structure
 class Token:
     def __init__(self, token_type, lexeme):
@@ -38,8 +46,20 @@ def lexical_analysis(input: str):
             lexme += char
             if (i + 1 < len(input)): 
                 if input[i + 1] == white_space:
-                    print(f"\"{lexme}\" = <seperator>")
+                    if lexme in keywords:
+                        print(f"\"{lexme}\" = keyword")
+                    elif lexme == '=' or lexme == '+' or lexme == '-' or lexme == '*' or lexme == '/' or lexme == '%' or lexme == '**' or lexme == '//' or lexme == '==' or lexme == '!=' or lexme == '>' or lexme == '<' or lexme == '>=' or lexme == '<=' or lexme == 'and' or lexme == 'or' or lexme == 'not':
+                        print(f"\"{lexme}\" = operator")
+                    elif lexme.isdigit():
+                        print(f"\"{lexme}\" = integer")
+                    elif lexme.isidentifier():
+                        print(f"\"{lexme}\" = identifier")
+                    elif lexme == '(' or lexme == ')' or lexme == '{' or lexme == '}' or lexme == '[' or lexme == ']' or lexme == ',' or lexme == ':' or lexme == '.' or lexme == ';' or lexme == '@':
+                        print(f"\"{lexme}\" = seperator")
+                    else:
+                        print(f"\"{lexme}\" = unknown")
                     lexme = ''
+                
     print (f"\"{lexme}\" = <seperator>") # Final lexme before end of file
     print("\"")
 
