@@ -7,7 +7,7 @@ TOKEN_PATTERNS = [
     (r'\d+', 'integer'),
     (r'\b[a-zA-Z_]\w*\b', 'identifier'),
     (r'\+|\-|\*|\/|\=|\==|\!=|\>|\<|\>=|\<=', 'operator'),
-    (r'[\(\)\{\}\[\],\.:]', 'delimiter'),
+    (r'[\(\)\{\}\[\],\.:]', 'separator'), # Same as delimiters
     (r'".*?"|\'.*?\'', 'string')
 ]
 
