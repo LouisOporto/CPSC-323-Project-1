@@ -7,20 +7,22 @@ TOKEN_PATTERNS = [
     (r'\d+', 'integer'),
     (r'\b[a-zA-Z_]\w*\b', 'identifier'),
     (r'\+|\-|\*|\/|\=|\==|\!=|\>|\<|\>=|\<=', 'operator'),
-    (r'[\(\)\{\}\[\],\.:]', 'separator'), # Same as delimiters
+    (r'[\(\)\{\}\[\],\.:]', 'separator'),
     (r'".*?"|\'.*?\'', 'string')
 ]
-
-# Combine patterns into a single regex
+# Combine token patterns into a single regular expression
 TOKEN_REGEX = '|'.join(f'(?P<{token_name}>{pattern})' for pattern, token_name in TOKEN_PATTERNS)
+# print(TOKEN_REGEX)
 
-# Function to remove comments and whitespace
 def remove_comments_and_whitespace(text: str):
+    ''' Function to remove coments and whitespace'''
     text = re.sub(r'#[^\n]*', '', text) # Remove comments
     return text
 
+
 def lexical_analysis(input: str):
-    print("<lexeme>: <token>")
+    ''' Function to perform lexical analysis '''
+    print("<lexeme>: <token>") # Print format
 
     # Remove comments and whitespace from input
     input_string = remove_comments_and_whitespace(input)
@@ -28,15 +30,15 @@ def lexical_analysis(input: str):
     # Tokenize the input string
     for match in re.finditer(TOKEN_REGEX, input_string):
         for token_name in match.groupdict():
-            lexme = match.group(token_name)
-            if lexme:
-                print('{0:10} = {1}'.format(lexme, token_name))
+            lexeme = match.group(token_name)
+            if lexeme:
+                print('{0:10} = {1}'.format(lexeme, token_name)) # Result of each identified lexeme
+
 
 if __name__ == "__main__":
     '''Run lexical program on user inputted file'''
     full_text = ""
-    # user_input = input("File Input: ")
-    user_input = "source.txt"
+    user_input = input("File Input: ")
     with open(user_input, "r") as file:
         full_text = file.read()
 
