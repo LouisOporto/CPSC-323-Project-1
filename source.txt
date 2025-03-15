@@ -4,7 +4,7 @@ y = 2.7
 z = x + y
 print("x + y\n")
 print(x + " + " + y)
-print(z) //check if a is greater than or equal to b
+print(z) #check if a is greater than or equal to b
 
 for i in range(5):
     print("Iteration", i)
