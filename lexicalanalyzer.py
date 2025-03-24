@@ -1,6 +1,6 @@
 import re
 
-# Define token patterns
+# Define token patterns to represent each token type
 TOKEN_PATTERNS = [
     (r'\bif\b|\belse\b|\bfor\b|\bwhile\b|\breturn\b|\bdef\b|\bclass\b', 'keyword'),
     (r'#[^\n]*', 'comment'),
